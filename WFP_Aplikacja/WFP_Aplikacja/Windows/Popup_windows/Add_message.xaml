@@ -1,0 +1,35 @@
+﻿<Window x:Class="WFP_Aplikacja.Windows.Popup_windows.Add_message"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WFP_Aplikacja.Windows.Popup_windows"
+      mc:Ignorable="d" 
+        Topmost = "True"
+      d:DesignHeight="450" d:DesignWidth="600" Width="600" Height="450"
+      Title="Show_edit_user" WindowStyle="None" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  MouseDown="Window_MouseDown">
+
+    <StackPanel>
+         
+        <TextBlock Text="Send Message To : Mark Wazowski" x:Name="U_text_sent_to" Foreground="#FF747474"  Margin="0 10 0 0" HorizontalAlignment="Center" FontSize="25"></TextBlock>
+
+        <TextBlock Text="Title"  Foreground="#FFB4B4B4" Margin="10"  FontWeight="Bold" HorizontalAlignment="Left" FontSize="20" ></TextBlock>
+
+        <TextBox BorderBrush="Black" x:Name="U_title" Width="300" HorizontalAlignment="Left" Height="30" FontSize="17" Margin="10 0 10 0" Background="#FFEEEEEE" Foreground="#FF747474" CaretBrush="#FF6E6E6E" >
+
+        </TextBox>
+        <DockPanel>
+            <TextBox
+AcceptsReturn="True" DockPanel.Dock="Left" VerticalContentAlignment="Top"  VerticalScrollBarVisibility="Visible"  BorderBrush="Black" x:Name="U_context" Height="241" FontSize="17" Margin="10 10 10 10" Background="#FFEEEEEE" Foreground="#FF747474" CaretBrush="#FF747474"  TextAlignment="Justify" TextWrapping="Wrap" />
+        </DockPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,2" Height="53">
+
+            <Button   Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Background="#FF63E247" Foreground="White"  Click="Add_record">
+                Send
+            </Button>
+            <Button   Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Background="#FFFF4B4B" Foreground="White" Click="Close_window">
+                Canel
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

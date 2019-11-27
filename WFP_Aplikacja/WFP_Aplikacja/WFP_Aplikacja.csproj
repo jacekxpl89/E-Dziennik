@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBB2F30C-B3BD-4FF0-AE03-897482CD0FC6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WFP_Aplikacja</RootNamespace>
+    <AssemblyName>WFP_Aplikacja</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=16.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Threading.16.3.13\lib\net472\Microsoft.VisualStudio.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Utilities.16.3.29318.209\lib\net46\Microsoft.VisualStudio.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=15.3.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Validation.15.3.15\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Nerdbank.Streams, Version=2.3.0.0, Culture=neutral, PublicKeyToken=cac503e1823ce71c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nerdbank.Streams.2.3.26\lib\netstandard2.0\Nerdbank.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="StreamJsonRpc, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\StreamJsonRpc.2.1.55\lib\netstandard2.0\StreamJsonRpc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.6.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.6.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.4.5.3\lib\netstandard2.0\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.3\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.WebSockets, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.WebSockets.4.3.0\lib\net46\System.Net.WebSockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controler\DB_controler.cs" />
+    <Compile Include="Controler\DB_mark_controler.cs" />
+    <Compile Include="Controler\DB_message_controler.cs" />
+    <Compile Include="Controler\DB_SchoolClass_controler.cs" />
+    <Compile Include="Controler\DB_Subject_Controler.cs" />
+    <Compile Include="Controler\DB_user_controler.cs" />
+    <Compile Include="Controler\I_DB_Controler.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\I_DataForm.cs" />
+    <Compile Include="Helpers\I_DataTable.cs" />
+    <Compile Include="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911191536338_school_test_1.cs" />
+    <Compile Include="Migrations\201911191536338_school_test_1.designer.cs">
+      <DependentUpon>201911191536338_school_test_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911241138343_m1.cs" />
+    <Compile Include="Migrations\201911241138343_m1.designer.cs">
+      <DependentUpon>201911241138343_m1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911241150488_m3.cs" />
+    <Compile Include="Migrations\201911241150488_m3.designer.cs">
+      <DependentUpon>201911241150488_m3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911241951469_m4.cs" />
+    <Compile Include="Migrations\201911241951469_m4.designer.cs">
+      <DependentUpon>201911241951469_m4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911242058345_m5.cs" />
+    <Compile Include="Migrations\201911242058345_m5.designer.cs">
+      <DependentUpon>201911242058345_m5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911251438597_m6.cs" />
+    <Compile Include="Migrations\201911251438597_m6.designer.cs">
+      <DependentUpon>201911251438597_m6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911252118388_m7.cs" />
+    <Compile Include="Migrations\201911252118388_m7.designer.cs">
+      <DependentUpon>201911252118388_m7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911252314458_8.cs" />
+    <Compile Include="Migrations\201911252314458_8.designer.cs">
+      <DependentUpon>201911252314458_8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911260007464_m8.cs" />
+    <Compile Include="Migrations\201911260007464_m8.designer.cs">
+      <DependentUpon>201911260007464_m8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911260008598_m9.cs" />
+    <Compile Include="Migrations\201911260008598_m9.designer.cs">
+      <DependentUpon>201911260008598_m9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261203071_m10.cs" />
+    <Compile Include="Migrations\201911261203071_m10.designer.cs">
+      <DependentUpon>201911261203071_m10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261227283_m11.cs" />
+    <Compile Include="Migrations\201911261227283_m11.designer.cs">
+      <DependentUpon>201911261227283_m11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261341372_m111.cs" />
+    <Compile Include="Migrations\201911261341372_m111.designer.cs">
+      <DependentUpon>201911261341372_m111.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261448175_m12.cs" />
+    <Compile Include="Migrations\201911261448175_m12.designer.cs">
+      <DependentUpon>201911261448175_m12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261559509_m13.cs" />
+    <Compile Include="Migrations\201911261559509_m13.designer.cs">
+      <DependentUpon>201911261559509_m13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261643003_m14.cs" />
+    <Compile Include="Migrations\201911261643003_m14.designer.cs">
+      <DependentUpon>201911261643003_m14.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261649029_m15.cs" />
+    <Compile Include="Migrations\201911261649029_m15.designer.cs">
+      <DependentUpon>201911261649029_m15.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261652147_m16.cs" />
+    <Compile Include="Migrations\201911261652147_m16.designer.cs">
+      <DependentUpon>201911261652147_m16.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261659197_m17.cs" />
+    <Compile Include="Migrations\201911261659197_m17.designer.cs">
+      <DependentUpon>201911261659197_m17.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261701437_m18.cs" />
+    <Compile Include="Migrations\201911261701437_m18.designer.cs">
+      <DependentUpon>201911261701437_m18.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911261821556_m19.cs" />
+    <Compile Include="Migrations\201911261821556_m19.designer.cs">
+      <DependentUpon>201911261821556_m19.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911262010327_m20.cs" />
+    <Compile Include="Migrations\201911262010327_m20.designer.cs">
+      <DependentUpon>201911262010327_m20.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911262017260_m21.cs" />
+    <Compile Include="Migrations\201911262017260_m21.designer.cs">
+      <DependentUpon>201911262017260_m21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911262021318_m22.cs" />
+    <Compile Include="Migrations\201911262021318_m22.designer.cs">
+      <DependentUpon>201911262021318_m22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911262023294_m23.cs" />
+    <Compile Include="Migrations\201911262023294_m23.designer.cs">
+      <DependentUpon>201911262023294_m23.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911270950034_m24.cs" />
+    <Compile Include="Migrations\201911270950034_m24.designer.cs">
+      <DependentUpon>201911270950034_m24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271050019_m25.cs" />
+    <Compile Include="Migrations\201911271050019_m25.designer.cs">
+      <DependentUpon>201911271050019_m25.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911271459062_m26.cs" />
+    <Compile Include="Migrations\201911271459062_m26.designer.cs">
+      <DependentUpon>201911271459062_m26.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\SchoolClass.cs" />
+    <Compile Include="Models\Schoolcontext.cs" />
+    <Compile Include="Models\Mark.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\SubjectWeek.cs" />
+    <Compile Include="Models\User_data.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Windows\Popup_windows\Add_message.xaml.cs">
+      <DependentUpon>Add_message.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Popup_windows\Show_edit_user.xaml.cs">
+      <DependentUpon>Show_edit_user.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\School_classes\Add_class_frame.xaml.cs">
+      <DependentUpon>Add_class_frame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\School_classes\school_class_window.xaml.cs">
+      <DependentUpon>school_class_window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="subject_page.xaml.cs">
+      <DependentUpon>subject_page.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\School_classes\Show_class.xaml.cs">
+      <DependentUpon>Show_class.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Users_table.xaml.cs">
+      <DependentUpon>Users_table.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Main.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Popup_windows\Add_message.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Popup_windows\Show_edit_user.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\School_classes\Add_class_frame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\School_classes\school_class_window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="subject_page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\School_classes\Show_class.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Users_table.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201911191536338_school_test_1.resx">
+      <DependentUpon>201911191536338_school_test_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911241138343_m1.resx">
+      <DependentUpon>201911241138343_m1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911241150488_m3.resx">
+      <DependentUpon>201911241150488_m3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911241951469_m4.resx">
+      <DependentUpon>201911241951469_m4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911242058345_m5.resx">
+      <DependentUpon>201911242058345_m5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911251438597_m6.resx">
+      <DependentUpon>201911251438597_m6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911252118388_m7.resx">
+      <DependentUpon>201911252118388_m7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911252314458_8.resx">
+      <DependentUpon>201911252314458_8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911260007464_m8.resx">
+      <DependentUpon>201911260007464_m8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911260008598_m9.resx">
+      <DependentUpon>201911260008598_m9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261203071_m10.resx">
+      <DependentUpon>201911261203071_m10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261227283_m11.resx">
+      <DependentUpon>201911261227283_m11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261341372_m111.resx">
+      <DependentUpon>201911261341372_m111.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261448175_m12.resx">
+      <DependentUpon>201911261448175_m12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261559509_m13.resx">
+      <DependentUpon>201911261559509_m13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261643003_m14.resx">
+      <DependentUpon>201911261643003_m14.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261649029_m15.resx">
+      <DependentUpon>201911261649029_m15.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261652147_m16.resx">
+      <DependentUpon>201911261652147_m16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261659197_m17.resx">
+      <DependentUpon>201911261659197_m17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261701437_m18.resx">
+      <DependentUpon>201911261701437_m18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911261821556_m19.resx">
+      <DependentUpon>201911261821556_m19.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911262010327_m20.resx">
+      <DependentUpon>201911262010327_m20.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911262017260_m21.resx">
+      <DependentUpon>201911262017260_m21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911262021318_m22.resx">
+      <DependentUpon>201911262021318_m22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911262023294_m23.resx">
+      <DependentUpon>201911262023294_m23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911270950034_m24.resx">
+      <DependentUpon>201911270950034_m24.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271050019_m25.resx">
+      <DependentUpon>201911271050019_m25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271459062_m26.resx">
+      <DependentUpon>201911271459062_m26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ten projekt zawiera odwołania do pakietów NuGet, których nie ma na tym komputerze. Użyj przywracania pakietów NuGet, aby je pobrać. Aby uzyskać więcej informacji, zobacz http://go.microsoft.com/fwlink/?LinkID=322105. Brakujący plik: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

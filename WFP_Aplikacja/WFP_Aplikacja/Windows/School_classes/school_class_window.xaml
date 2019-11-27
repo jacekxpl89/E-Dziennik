@@ -1,0 +1,33 @@
+﻿<Page x:Class="WFP_Aplikacja.school_class_window"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WFP_Aplikacja"
+      mc:Ignorable="d" 
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="740" d:DesignWidth="1127"
+      Title="school_class_window">
+
+    
+    
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Margin="10 10 10 10" HorizontalAlignment="Right">
+                <ComboBox x:Name="U_classes" IsReadOnly="True" ItemsSource="{Binding}" Focusable="False"  IsEditable="True"  Text="Select class"  Margin="10 0 0 0" Height="40" Width="250" FontSize="18" Foreground="#FF673AB7"/>
+                <Button Content="New class" Margin="20 0 0 0" Width="300" Click="Add_class" Background="#FFE6E6E6" Foreground="#FF6F6F72"/>
+            </StackPanel>
+         
+        </Grid>
+         <Frame x:Name="U_frame" Grid.Row="1" Background="White">
+
+        </Frame>
+    </Grid>
+</Page>

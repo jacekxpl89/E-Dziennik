@@ -1,0 +1,86 @@
+﻿<Window x:Class="WFP_Aplikacja.Windows.Popup_windows.Show_edit_user"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WFP_Aplikacja.Windows.Popup_windows"
+      mc:Ignorable="d" 
+        Topmost = "True"
+      d:DesignHeight="350" d:DesignWidth="600" Width="600" Height="350"
+      Title="Show_edit_user" WindowStyle="None" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterOwner"  MouseDown="Window_MouseDown" >
+
+    <Grid  HorizontalAlignment="Center" Background="White">
+        <StackPanel Orientation="Horizontal">
+
+
+            <Grid Width="250" Height="350" Background="#FF8080FF"/>
+            <Image  x:Name="U_photo" Grid.Column="0" Height="350" Margin="0 0 0 0" /> 
+
+
+            <StackPanel  Margin="10 10 10 10" Background="White">
+
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Name" FontSize="17" Foreground="#FF646464"/>
+                        <Label x:Name="U_name"   Background="#eee" FontSize="17" Height="30" />
+                    </StackPanel>
+                    <StackPanel  Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Lastname"  FontSize="17" Foreground="#FF646464" />
+                        <Label x:Name="U_lastname"  FontSize="17"  Background="#eee" Height="30" />
+                    </StackPanel>
+                </StackPanel>
+
+
+
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Pesel" FontSize="17"  Foreground="#FF686868" />
+                        <Label x:Name="U_pesel"   FontSize="17"  Background="#eee" Height="30" />
+                    </StackPanel>
+                    <StackPanel  Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Emile" FontSize="17"  Foreground="#FF686868" />
+                        <Label x:Name="U_emile" FontSize="17"    Background="#eee" Height="30" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Phone" FontSize="17"  Foreground="#FF646464" />
+                        <Label x:Name="U_phone"  FontSize="17"   Background="#eee" Height="30" />
+                    </StackPanel>
+                    <StackPanel  Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Birthday" FontSize="17"  Foreground="#FF646464" />
+                        <Label x:Name="U_birthday" FontSize="17"    Background="#eee" Height="30" />
+                    </StackPanel>
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal" >
+                    <StackPanel Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Street" FontSize="17"  Foreground="#FF646464" />
+                        <Label x:Name="U_street" FontSize="17"    Background="#eee" Height="30" />
+                    </StackPanel>
+                    <StackPanel  Margin="10 10 10 10" Width="150">
+                        <TextBlock Text="Premmison" FontSize="17"  Foreground="#FF686868" />
+                        <Label x:Name="U_premmison" FontSize="17"    Background="#eee" Height="30" />
+                    </StackPanel>
+                </StackPanel>
+
+
+
+
+
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,15,2" Height="53">
+
+            <Button   Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Background="#FF63E247" Foreground="White"  Click="Close_window">
+                Save
+            </Button>
+            <Button   Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Background="#FFFF4B4B" Foreground="White" Click="Close_window">
+                Canel
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,69 @@
+﻿<Page x:Class="WFP_Aplikacja.subject_page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WFP_Aplikacja"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="740" d:DesignWidth="1127"
+      Title="subject_page">
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel VerticalAlignment="Center" Grid.Column="0" >
+            <TextBlock Text="Add new Subject" Margin="10 10 10 100" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF673AB7"></TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <ComboBox x:Name="U_teachers" IsReadOnly="True" ItemsSource="{Binding}" 
+Focusable="False"  IsEditable="True"  Text="Select teacher" Margin="10 10 10 10" Height="40" Width="250" FontSize="15" Foreground="#FF673AB7">
+
+                </ComboBox>
+
+                <ComboBox x:Name="U_subjects" IsReadOnly="True"  
+Focusable="False"  IsEditable="True"  Text="Select subject" Margin="10 10 10 10" Height="40" Width="250" FontSize="15" Foreground="#FF673AB7"/>
+            </StackPanel>
+            <Button Content="Add"  Height="50" Margin="10 10 10 10" Click="Add_record"></Button>
+        </StackPanel>
+
+        <Grid Grid.Column="1" Background="#FF673AB7">
+            <StackPanel>
+                <TextBlock Text="Subjects list" Margin="10 10 10 10" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+
+                <DataGrid x:Name="datagrid" ItemsSource="{Binding}" AlternatingRowBackground="LightGray" CanUserAddRows="False"  CanUserSortColumns="False"
+                      AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" 
+      ScrollViewer.VerticalScrollBarVisibility="Visible" IsReadOnly="True" Height="667" Margin="0,0,2,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id" Binding="{Binding Path=ID}"/>
+                        <DataGridTextColumn Header="Subject" Binding="{Binding Path=Name}"/>
+                        <DataGridTextColumn  Header="Name" Binding="{Binding Path=Teacher.User_data.Name}"/>
+                        <DataGridTextColumn  Header="Lastname" Binding="{Binding Path=Teacher.User_data.LastName}"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button Click="Open_record"  Padding="3 3 3 3" Margin="5 0 0 5" Background="#FFE4D368">
+                                            <materialDesign:PackIcon Kind="QuestionMark" Width="30" Height="30" />
+                                        </Button>
+                                        <Button  Click="Delete_record" Padding="3 3 3 3" Margin="5 0 0 5" Background="#FFFF4F46">
+                                            <materialDesign:PackIcon Kind="Minus" Width="30" Height="30" />
+                                        </Button>
+
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Page>
